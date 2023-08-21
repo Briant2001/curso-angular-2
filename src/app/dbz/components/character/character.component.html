@@ -2,7 +2,7 @@
 <form action="" class="row" (ngSubmit)="emitCharacter()">
     <input type="text" class="form-control mb-2" placeholder="Nombre" name="name"
         [(ngModel)]="character.name">
-        
+
     <input type="number " class="form-control mb-2" placeholder="Poder" name="power"
         [(ngModel)]="character.power">
 
@@ -10,5 +10,5 @@
         Agregar
     </button>
 
-    <pre>{{character|json}}</pre>
-</form> 
+    <!-- <pre>{{character|json}}</pre> -->
+</form>
