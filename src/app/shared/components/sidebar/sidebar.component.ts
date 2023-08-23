@@ -12,7 +12,15 @@ export class SidebarComponent {
 
   get gifsService():string[]{
     return this.gifsServices.tagsHistory;
+
   }
+
+
+  consultAgain(tag:string):void {
+    this.gifsServices.serachTag(tag);
+  }
+
+
 
 }
 
