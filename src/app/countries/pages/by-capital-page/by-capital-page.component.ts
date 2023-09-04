@@ -11,6 +11,8 @@ import { Country } from '../../interfaces/country.interface';
 export class ByCapitalPageComponent {
 
   public country:Country[]=[];
+  public isLoading: boolean=false;
+
 
   constructor(private countrService:CountryService){
 
@@ -18,9 +20,11 @@ export class ByCapitalPageComponent {
 
 
   searchByCapital(term:string):void{
+    this.isLoading=true;
      this.countrService.searcByCapital(term).subscribe(res=>{
       this.country=res;
-      console.log({res});
+      this.isLoading=false;
+
      })
   }
 }
