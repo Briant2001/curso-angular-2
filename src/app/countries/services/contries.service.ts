@@ -14,9 +14,6 @@ export class CountryService {
     byCapital:{term:"",countries:[]},
     byCountries:{term:"",countries:[]},
     byRegion:{term:"",countries:[]},
-
-
-
   }
 
   constructor(private httpClient: HttpClient) {
