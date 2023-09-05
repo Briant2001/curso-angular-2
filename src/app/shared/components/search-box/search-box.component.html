@@ -1,8 +1,3 @@
 <!-- (keyup.enter)="emitEvent(txt.value)" -->
-<input
-  type="text"
-  [placeholder]="placeHolder"
-  class="form-control"
-  #txt
-  (keyup)="onkeyPress(txt.value)"
-  >
+<input type="text" [placeholder]="placeHolder" [value]="initialSearch" class="form-control" #txt
+  (keyup)="onkeyPress(txt.value)">
