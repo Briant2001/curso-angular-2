@@ -1,0 +1,73 @@
+<p-panel header="Pipes no tan comunes" class="p-1">
+    <p>Pipes incluidos en angular - Usualmente en el Common Module </p>
+</p-panel>
+
+<div class="grid">
+
+    <div class="col-12 md:col-6">
+        <p-card header="uppercase">
+            <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
+                <p>Saludos {{name}}, es un palcer {{gender | i18nSelect:invitarloMap}} a nuestro 
+                    evento
+                </p>
+                <p-button
+                    (click)="changeClient()"
+                    label="Cambiar"
+                >
+                    
+                </p-button>
+            </p-fieldset>
+        </p-card>
+
+        <p-card header="uppercase">
+            <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
+                <p>Actualmente  {{cliente.length | i18nPlural:clientsMap}}</p>
+                <p-button
+                    label="Borrar cliente"
+                    (click)="deleteClient()"
+                ></p-button>
+            </p-fieldset>
+        </p-card>
+
+        <p-card header="uppercase">
+            <p-fieldset legend="Slice Pipe" [toggleable]="true">
+                <b>Original</b>
+                <pre>{{cliente}}</pre>
+                <pre>{{cliente | slice:0:3}}</pre>
+                <pre>{{cliente | slice:0:-1}}</pre>
+            </p-fieldset>
+        </p-card>
+
+        <p-card header="uppercase">
+            <p-fieldset legend="Json Pipe" [toggleable]="true">
+                <pre>
+                    {{person | json}}
+
+                </pre>
+            </p-fieldset>
+        </p-card>
+
+        <p-card header="uppercase">
+            <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+                <ul>
+                    <li *ngFor="let item of person|keyvalue">
+                        <b>
+                            {{item.key | titlecase }}: <b>{{item.value}}</b>
+                        </b>
+                        
+                    </li>
+                </ul>
+            </p-fieldset>
+        </p-card>
+
+        <p-card header="uppercase">
+            <p-fieldset legend="Async Pipe" [toggleable]="true">
+                Observable
+                <pre>{{myObservable | async}}</pre>
+                Promise
+                <pre>{{promise | async}}</pre>
+            </p-fieldset>
+        </p-card>
+        
+    </div>
+</div>
