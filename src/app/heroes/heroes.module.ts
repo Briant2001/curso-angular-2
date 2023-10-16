@@ -9,6 +9,8 @@ import { SearhPagesComponent } from './pages/searh-pages/searh-pages.component';
 import { MaterialModule } from '../material/material.module';
 import { ListPagesComponent } from './pages/list-pages/list-pages.component';
 import { CardComponent } from './components/card/card.component';
+import { HeroImagePipe } from './pipes/hero-image.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,13 +20,15 @@ import { CardComponent } from './components/card/card.component';
     NewPagesComponent,
     SearhPagesComponent,
     ListPagesComponent,
-    CardComponent
+    CardComponent,
+    HeroImagePipe,
 
   ],
   imports: [
     CommonModule,
     HeroesRoutingModule,
     MaterialModule,
+    ReactiveFormsModule
   ],
   providers:[]
 })
