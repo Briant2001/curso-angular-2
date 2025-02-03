@@ -17,8 +17,8 @@ import { SwitchesPageComponent } from './pages/switches-page/switches-page.compo
   ],
   imports: [
     CommonModule,
-    ReactiveRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ReactiveRoutingModule
 
 
   ]

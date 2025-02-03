@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators,FormBuilder } from '@angular/forms';
+import { ValidatorsService } from 'src/app/shared/services/validators.service';
 
 
 @Component({
@@ -20,14 +21,15 @@ export class BasicPageComponent implements OnInit{
     price:[0, [Validators.required, Validators.min(0)]],
     inStorage:[0, [Validators.required, Validators.min(0)]],
   })
- 
-  constructor(private fb:FormBuilder){}
+
+  constructor(private fb:FormBuilder,private validatorsService:ValidatorsService){}
   ngOnInit(): void {
     // this.myForm.reset({name:"RTX",price:1000, inStorage:6})
   }
 
   isValidField(field:string):boolean | null{
-    return this.myForm.controls[field].errors && this.myForm.controls[field].touched
+
+    return this.validatorsService.isValidField(this.myForm,field)
   }
   getFieldError(field:string):string | null {
     if(!this.myForm.controls[field]){
@@ -48,13 +50,13 @@ export class BasicPageComponent implements OnInit{
 
   onSave(){
 
-    if(this.myForm.invalid){ 
+    if(this.myForm.invalid){
       this.myForm.markAllAsTouched();
       return;
     }
 
     this.myForm.reset({name:"",price:0, inStorage:0})
-  
+
   }
 
 }

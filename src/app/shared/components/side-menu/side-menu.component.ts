@@ -29,7 +29,7 @@ export class SideMenuComponent {
   public authMenu:MenuItem[]=[
     {
       title:"Registro",
-      route:"./reactive/auth"
+      route:"./auth/sign-up"
     },
   ]
 }
